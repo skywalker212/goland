@@ -1,12 +1,13 @@
 APP=goland
-
+SRCPATH=./
+TARGET=main.go
 
 build: clean
 	echo "building"
-	go build -o ${APP} main.go
+	go build -o ${APP} ${SRCPATH}${TARGET}
 
 run:
-	go run -race main.go
+	go run -race ${SRCPATH}${TARGET}
 
 clean:
 	go clean

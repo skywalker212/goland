@@ -1,0 +1,29 @@
+#+AUTHOR: Akash
+#+DESCRIPTION: Describing the syntax of go programs
+#+LANGUAGE: GO
+
+* Syntax in go
+** Package name
+  Each go program starts with a package. This is not related to the this code since this is the first file in documenting the language (for me personally). Also I have found that org mode does not support the go language in the source blocks, but I am going to try that anyways. However, I am thinking about switching to writing go files and putting comments on them as for literate programming but that wont be the same
+  #+BEGIN_SRC go :exports code
+  package main
+  #+END_SRC
+
+** Module Imports
+  Just like any other language, Go also has it's pre packaged libraries that we can use out of the box. The libraries that you want to use can be imported using import command of go.
+  #+BEGIN_SRC go :exports code
+  import (
+    "fmt"
+    "math/rand"
+  )
+  #+END_SRC
+  In this case, we are importing two different modules, ~fmt~ and ~math/rand~. Right now I am using ~fmt~ for the Println function that it provides to print the thing to Standard Output. ~math/rand~ is used as an example of a module from which we will use a function, math module is part of the Standard Library.
+
+** Main Function
+  As we have a main function in C et.al., similarly we have a main function in go which will be executed when we run the program.
+  #+BEGIN_SRC go :exports code
+  func main() {
+    fmt.Println("A number from 0-99: ", rand.Intn(100))
+  }
+  #+END_SRC
+  This function will just print a random number. I have also found godoc to be quite useful for looking up the documentation for different function. And since I have integrated it into emacs, I don't have to go to look up the go docuemetation online or run the godoc command from the commandline.
